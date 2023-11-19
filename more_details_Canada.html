@@ -1,0 +1,187 @@
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightgoldenrodyellow;
+
+}
+.container{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  text-align: left ;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  -ms-flex: 50%; 
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 5px;
+  vertical-align: middle;
+}
+
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #8d9bf6;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: rgb(102, 109, 242);
+}
+
+.btn.active {
+  background-color: #2b6dde;
+  color: white;
+}
+.topnav {
+        overflow: hidden;
+        background-color: aquamarine;
+        }
+
+        .topnav a {
+        float: left;
+        color: blueviolet;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+
+        .topnav a:hover {
+        background-color: lightblue;
+        color: black;
+        }
+
+        .topnav a.active {
+        background-color: rgb(93,9,238);
+        color: white;
+        }
+</style>
+  
+</head>
+
+<body>
+  
+<div class="topnav">
+  <a href="homepage.html">Home</a>
+  <a href="login.php">Login</a>
+  <a href="register.php">Register</a>
+</div>
+  
+  
+<div class="header" id="myHeader">
+  <h1>Photos of Canada</h1>
+  <p>Change Grid View</p>
+  <button class="btn" onclick="one()">Large</button>
+  <button class="btn active" onclick="two()">Medium</button>
+  <button class="btn" onclick="four()">Small</button>
+</div>
+
+<div class="row"> 
+  <div class="column">
+    <img src="canada_1.jpg" style="width:100%">
+    
+    
+  </div>
+  <div class="column">
+    <img src="canada.jpg" style="width:100%">
+   
+    
+   
+  </div>  
+  <div class="column">
+    <img src="canada_3.jpg" style="width:100%">
+    <img src="canada_4.jpg" style="width:100%">
+   
+   
+  </div>  
+  
+</div>
+
+<script>
+
+var elements = document.getElementsByClassName("column");
+
+
+var i;
+
+// Full images
+function one() {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "100%";  // IE10
+    elements[i].style.flex = "100%";
+  }
+}
+
+// medium
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "50%";  // IE10
+    elements[i].style.flex = "50%";
+  }
+}
+
+// smaller images
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+}
+
+// button highlight 
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+  <footer class="footer">
+    <div class="bottom-links">
+      <div class="links">
+        <span>Navigation</span>
+        <a href="homepage.html">Home</a>
+        <a href="login.php">Login</a>
+        <a href="register.php">Register</a>
+      </div>
+      
+  
+  </footer>
+</body>
+
+</html>

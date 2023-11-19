@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+    <h1>Welcome to FastTravel</h1>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: lightgoldenrodyellow;
+        }
+        * {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+div.gallery {
+  border: 1px solid #e0f5f8;
+}
+
+div.gallery:hover {
+  border: 10px solid #0b9bae;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.responsive {
+  padding: 0 6px;
+  float: right;
+  width: 24.99999%;
+}
+
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+        .topnav {
+        overflow: hidden;
+        background-color: aquamarine;
+        }
+
+        .topnav a {
+        float: left;
+        color: blueviolet;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+
+        .topnav a:hover {
+        background-color: lightblue;
+        color: black;
+        }
+
+        .topnav a.active {
+        background-color: rgb(93,9,238);
+        color: white;
+        }
+        </style>
+</head>
+<body>
+
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="login.php">Login</a>
+  <a href="register.php">Register</a>
+</div>
+
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="egypt.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="canada.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="Ireland_2.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+<script>
+    let slideIndex = [1,1];
+    let slideId = ["mySlides1"]
+    showSlides(1, 0);
+    
+    function plusSlides(n, no) {
+      showSlides(slideIndex[no] += n, no);
+    }
+    
+    function showSlides(n, no) {
+      let i;
+      let x = document.getElementsByClassName(slideId[no]);
+      if (n > x.length) {slideIndex[no] = 1}    
+      if (n < 1) {slideIndex[no] = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      x[slideIndex[no]-1].style.display = "block";  
+    }
+    </script>
+    <p> We offer great tours to many destinations like:</p>
+    <ul>
+      <li>Jasper,Canada </li>
+      <li>Cairo,Egypt</li>
+      <li>Dublin,Ireland</li>
+      <li> And Many MORE!</li>
+    </ul>
+    <p>Click any destination to vew more photos!</p>
+    <p style="text-align:right;">Register as a user TODAY!</p>
+
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="more_details_Ireland.html">
+          <img src="Ireland_3.jpg" alt="Ireland" width="600" height="400">
+        </a>
+        <div class="desc">Ireland</div>
+      </div>
+    </div>
+    
+    
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="more_details_Greece.html">
+          <img src="greece.jpg" alt="greek" width="600" height="400">
+        </a>
+        <div class="desc">Greece</div>
+      </div>
+    </div>
+    
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="more_details_Egypt.html">
+          <img src="egypt.jpg" alt="egypt" width="600" height="400">
+        </a>
+        <div class="desc">Egypt</div>
+      </div>
+    </div>
+    
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="more_details_Canada.html">
+          <img src="canada.jpg" alt="canada" width="600" height="400">
+        </a>
+        <div class="desc">Canada</div>
+      </div>
+    </div>
+    
+
+</body>
+</html>
